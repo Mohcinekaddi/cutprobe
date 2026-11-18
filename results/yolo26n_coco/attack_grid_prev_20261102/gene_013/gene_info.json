@@ -1,0 +1,45 @@
+{
+    "gene_id": 13,
+    "gene_values": [
+        0,
+        40,
+        135,
+        233
+    ],
+    "taps": [
+        "_model.5_conv_Conv_output_0@135",
+        "_model.10_m_m.0_attn_Add_output_0",
+        "_model.19_cv1_act_Mul_output_0"
+    ],
+    "placement": [
+        "localhost_gpu0",
+        "localhost_cpu012",
+        "localhost_cpu6789",
+        "localhost_cpu34"
+    ],
+    "attack_target_layer": {
+        "_model.5_conv_Conv_output_0@135": 2,
+        "_model.10_m_m.0_attn_Add_output_0": 3,
+        "_model.19_cv1_act_Mul_output_0": 4
+    },
+    "engine": "gpu_ort_cuda",
+    "side_inputs": {
+        "_model.10_m_m.0_attn_Add_output_0": [
+            "_model.10_Split_output_1",
+            "_model.10_Split_output_0",
+            "_model.6_cv2_act_Mul_output_0",
+            "_model.4_cv2_act_Mul_output_0"
+        ],
+        "_model.19_cv1_act_Mul_output_0": [
+            "_model.23_one2one_cv2.0_one2one_cv2.0.1_act_Mul_output_0",
+            "_model.23_one2one_cv3.0_one2one_cv3.0.0_one2one_cv3.0.0.1_act_Mul_output_0",
+            "_model.10_cv2_act_Mul_output_0"
+        ]
+    },
+    "side_inputs_attacked": true,
+    "clean_buffers": {
+        "_model.5_conv_Conv_output_0@135": [
+            "_model.4_cv2_act_Mul_output_0"
+        ]
+    }
+}

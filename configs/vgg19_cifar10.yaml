@@ -1,0 +1,39 @@
+model: ../models/vgg19_cifar10_renamed.onnx
+
+preprocess:
+  channel_order: RGB
+  pixel_scale: 0.00392156862745098
+  mean: [0.4914, 0.4822, 0.4465]
+  std: [0.2470, 0.2435, 0.2616]
+  resize_short: null
+
+platform:
+  gpu_slot: 5
+  resources: [localhost_gpu0, localhost_cpu012, localhost_cpu34, localhost_cpu6789]
+
+autodice:
+  bench_image: ../data/cifar10_test/00000.png
+
+search:
+  levels: analytic+measure
+  l1_pop: 200
+  l1_gen: 800
+  l2_pop: 36
+  l2_gen: 30
+
+attack:
+  csv: ../data/cifar10_test/test.csv
+  max_images: 9800
+  n_buffer: 200
+  batch: 256
+  configs:
+    - {attack: mfgsm, eps_mode: fixed, eps_rel: [0.01, 0.05, 0.1, 0.25, 0.5, 0.8]}
+    - {attack: mgna, gamma: [0.1 ,0.5], sigma_rel: [0.01, 0.05, 1.0, 1.5]}
+    - {attack: mjsma, theta: [0.001, 0.01, 0.05, 0.08, 0.1]}
+report:
+  stealth_band: 8
+  success_asr: 50
+  threshold:
+    mode: calibrated
+    window: 200
+    false_alarm: 0.01

@@ -1,0 +1,30 @@
+model: ../models/yolov5s.onnx
+
+platform:
+  gpu_slot: 5
+  resources: [localhost_gpu0, localhost_cpu012, localhost_cpu34, localhost_cpu6789]
+
+autodice:
+  bench_image: ../data/coco/val2017/000000000139.jpg
+  deterministic: false
+
+detection:
+  conf: 0.25
+
+attack:
+  annotations: ../data/coco/annotations/instances_val2017.json
+  dataset_dir: ../data/coco/val2017
+  max_images: 5000
+  n_buffer: 200
+  batch: 32
+  configs:
+    - {attack: mfgsm, eps_mode: fixed, eps_rel: [0.01, 0.05, 0.1, 0.25, 0.5, 0.8]}
+    - {attack: mgna, gamma: [0.1 ,0.5, 1.0], sigma_rel: [0.01, 0.05, 1.0, 1.5]}
+    - {attack: mjsma, theta: [0.001, 0.01, 0.05, 0.08, 0.1]}
+report:
+  stealth_band: 8
+  success_asr: 50
+  threshold:
+    mode: calibrated
+    window: 200
+    false_alarm: 0.01

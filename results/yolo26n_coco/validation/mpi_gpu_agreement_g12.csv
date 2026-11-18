@@ -1,0 +1,19 @@
+run,cut,tag,n,same_clean_top1,same_attack_top1,gpu_acc,mpi_acc,d_acc,gpu_asr,mpi_asr,d_asr,gpu_clean,mpi_clean,d_clean,gpu_map50,mpi_map50,d_map50
+YOLO26n g12 fp32,_model.3_act_Mul_output_0,mfgsm_eps_0p5,200,,,,,,51.89,51.69,-0.2,60.9,60.98,0.08,29.65,29.65,0.0
+YOLO26n g12 fp32,_model.3_act_Mul_output_0,mgna_g0p5_s1,200,,,,,,57.84,57.78,-0.06,60.9,60.98,0.08,25.59,25.51,-0.08
+YOLO26n g12 fp32,_model.3_act_Mul_output_0,mjsma_t0p01,200,,,,,,91.22,91.2,-0.02,60.9,60.98,0.08,11.44,11.43,-0.01
+YOLO26n g12 fp32,_model.9_cv2_act_Mul_output_0,mfgsm_eps_0p5,200,,,,,,27.16,26.93,-0.23,60.9,60.98,0.08,50.94,51.01,0.07
+YOLO26n g12 fp32,_model.9_cv2_act_Mul_output_0,mgna_g0p5_s1,200,,,,,,15.27,15.29,0.02,60.9,60.98,0.08,54.54,54.58,0.04
+YOLO26n g12 fp32,_model.9_cv2_act_Mul_output_0,mjsma_t0p01,200,,,,,,41.08,40.87,-0.21,60.9,60.98,0.08,42.49,42.71,0.22
+YOLO26n g12 fp32,_model.16_cv2_act_Mul_output_0,mfgsm_eps_0p5,200,,,,,,50.54,50.34,-0.2,60.9,60.98,0.08,45.78,45.18,-0.6
+YOLO26n g12 fp32,_model.16_cv2_act_Mul_output_0,mgna_g0p5_s1,200,,,,,,14.59,14.48,-0.11,60.9,60.98,0.08,55.92,55.9,-0.02
+YOLO26n g12 fp32,_model.16_cv2_act_Mul_output_0,mjsma_t0p01,200,,,,,,82.3,82.27,-0.03,60.9,60.98,0.08,29.46,29.54,0.08
+YOLO26n g12 fp16+Winograd,_model.3_act_Mul_output_0,mfgsm_eps_0p5,200,,,,,,51.89,51.63,-0.26,60.9,60.95,0.05,29.65,29.74,0.09
+YOLO26n g12 fp16+Winograd,_model.3_act_Mul_output_0,mgna_g0p5_s1,200,,,,,,57.84,57.86,0.02,60.9,60.95,0.05,25.59,25.24,-0.35
+YOLO26n g12 fp16+Winograd,_model.3_act_Mul_output_0,mjsma_t0p01,200,,,,,,91.22,90.92,-0.3,60.9,60.95,0.05,11.44,11.2,-0.24
+YOLO26n g12 fp16+Winograd,_model.9_cv2_act_Mul_output_0,mfgsm_eps_0p5,200,,,,,,27.16,26.83,-0.33,60.9,60.95,0.05,50.94,51.05,0.11
+YOLO26n g12 fp16+Winograd,_model.9_cv2_act_Mul_output_0,mgna_g0p5_s1,200,,,,,,15.27,15.04,-0.23,60.9,60.95,0.05,54.54,54.54,0.0
+YOLO26n g12 fp16+Winograd,_model.9_cv2_act_Mul_output_0,mjsma_t0p01,200,,,,,,41.08,41.19,0.11,60.9,60.95,0.05,42.49,42.86,0.37
+YOLO26n g12 fp16+Winograd,_model.16_cv2_act_Mul_output_0,mfgsm_eps_0p5,200,,,,,,50.54,50.81,0.27,60.9,60.95,0.05,45.78,44.78,-1.0
+YOLO26n g12 fp16+Winograd,_model.16_cv2_act_Mul_output_0,mgna_g0p5_s1,200,,,,,,14.59,14.36,-0.23,60.9,60.95,0.05,55.92,55.95,0.03
+YOLO26n g12 fp16+Winograd,_model.16_cv2_act_Mul_output_0,mjsma_t0p01,200,,,,,,82.3,82.11,-0.19,60.9,60.95,0.05,29.46,29.33,-0.13

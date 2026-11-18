@@ -1,0 +1,10 @@
+split_layer,layer_name,attack,config_tag,n_paired_images,n_gt_objects,base_hit_atk_hit,base_hit_atk_miss,base_miss_atk_hit,base_miss_atk_miss,attack_success_rate_pct,accidental_correction_rate_pct,net_effect_pct,image_attack_success_rate_pct,ref_detections,vanished_pct,ghost_pct,relabeled_pct,image_changed_pct,asr_reference
+2,_model.8_Split_output_1@88,mfgsm,mfgsm_eps_0p5,4800,34905,15715,1028,480,17682,6.14,2.64,1.57,18.43,22111,10.66,7.14,0.28,47.1,ground_truth
+2,_model.8_Split_output_1@88,mgna,mgna_g0p5_s0p08,4800,34905,16694,49,47,18115,0.29,0.26,0.01,1.07,22111,0.68,0.66,0.0,5.83,ground_truth
+2,_model.8_Split_output_1@88,mgna,mgna_g0p5_s1p2,4800,34905,15989,754,525,17637,4.5,2.89,0.66,14.38,22111,8.57,7.46,0.3,44.23,ground_truth
+3,_model.8_m.0_m_m.0_cv1_conv_Conv_output_0,mfgsm,mfgsm_eps_0p5,4800,34905,13240,3503,487,17675,20.92,2.68,8.64,45.48,22111,29.95,8.1,0.92,66.33,ground_truth
+3,_model.8_m.0_m_m.0_cv1_conv_Conv_output_0,mgna,mgna_g0p5_s0p08,4800,34905,16608,135,142,18020,0.81,0.78,-0.02,2.85,22111,1.82,1.94,0.0,15.1,ground_truth
+3,_model.8_m.0_m_m.0_cv1_conv_Conv_output_0,mgna,mgna_g0p5_s1p2,4800,34905,13709,3034,674,17488,18.12,3.71,6.76,40.99,22111,26.17,11.34,0.83,65.4,ground_truth
+4,_model.16_m.0_m_m.0_Add_output_0,mfgsm,mfgsm_eps_0p5,4800,34905,10166,6577,91,18071,39.28,0.5,18.58,57.74,22111,49.53,1.81,0.11,69.79,ground_truth
+4,_model.16_m.0_m_m.0_Add_output_0,mgna,mgna_g0p5_s0p08,4800,34905,16627,116,117,18045,0.69,0.64,-0.0,2.5,22111,1.6,1.65,0.0,12.83,ground_truth
+4,_model.16_m.0_m_m.0_Add_output_0,mgna,mgna_g0p5_s1p2,4800,34905,14507,2236,502,17660,13.35,2.76,4.97,31.56,22111,20.73,7.62,0.19,57.21,ground_truth

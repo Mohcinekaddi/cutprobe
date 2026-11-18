@@ -1,0 +1,8 @@
+runs/
+data/
+third_party/
+__pycache__/
+*.pyc
+*.log
+*.out
+results/*/format_*

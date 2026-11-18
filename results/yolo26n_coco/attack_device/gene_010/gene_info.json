@@ -1,0 +1,48 @@
+{
+    "gene_id": 10,
+    "gene_values": [
+        0,
+        82,
+        85,
+        233
+    ],
+    "taps": [
+        "_model.8_m.0_cv1_conv_Conv_output_0@dev0",
+        "_model.8_m.0_cv2_act_Sigmoid_output_0@dev82",
+        "_model.19_cv1_act_Mul_output_0"
+    ],
+    "placement": [
+        "localhost_cpu012",
+        "localhost_gpu0",
+        "localhost_cpu34",
+        "localhost_cpu6789"
+    ],
+    "attack_target_layer": {
+        "_model.8_m.0_cv1_conv_Conv_output_0@dev0": 2,
+        "_model.8_m.0_cv2_act_Sigmoid_output_0@dev82": 3,
+        "_model.19_cv1_act_Mul_output_0": 4
+    },
+    "engine": "gpu_ort_cuda",
+    "side_inputs": {
+        "_model.8_m.0_cv1_conv_Conv_output_0@dev0": [
+            "_model.8_Split_output_1",
+            "_model.8_Split_output_0",
+            "_model.6_cv2_act_Mul_output_0",
+            "_model.4_cv2_act_Mul_output_0"
+        ],
+        "_model.8_m.0_cv2_act_Sigmoid_output_0@dev82": [
+            "_model.8_m.0_cv1_act_Sigmoid_output_0",
+            "_model.8_m.0_cv2_conv_Conv_output_0"
+        ]
+    },
+    "side_inputs_attacked": true,
+    "clean_buffers": {
+        "_model.8_m.0_cv2_act_Sigmoid_output_0@dev82": [
+            "_model.8_m.0_cv1_conv_Conv_output_0",
+            "_model.8_Split_output_0",
+            "_model.8_Split_output_1",
+            "_model.6_cv2_act_Mul_output_0",
+            "_model.4_cv2_act_Mul_output_0"
+        ]
+    }
+}

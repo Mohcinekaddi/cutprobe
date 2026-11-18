@@ -1,0 +1,44 @@
+{
+ "key": {
+  "model": "format_yolo26n.onnx",
+  "mtime": 1792970935.0760572,
+  "size": 9767327,
+  "image": "data/coco/val2017/000000000139.jpg",
+  "pp": {
+   "channel_order": "RGB",
+   "pixel_scale": 0.00392156862745098,
+   "mean": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "std": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "resize_short": null,
+   "letterbox": true,
+   "pad_value": 114,
+   "input_hw": null
+  },
+  "onnx2ncnn": "third_party/AutoDiCE/build/tools/onnx/onnx2ncnn",
+  "harness": "9f266c7cf994",
+  "tol": 0.01,
+  "compat": 2
+ },
+ "ok": true,
+ "compared": 308,
+ "image": "data/coco/val2017/000000000139.jpg",
+ "worst": 0.0001223086087704928,
+ "first_bad": null,
+ "outputs": {
+  "_model.23_one2one_cv2.0_one2one_cv2.0.2_Conv_output_0": "relative difference 1.27e-05",
+  "_model.23_one2one_cv3.0_one2one_cv3.0.2_Conv_output_0": "relative difference 3.66e-06",
+  "_model.23_one2one_cv2.1_one2one_cv2.1.2_Conv_output_0": "relative difference 1.03e-05",
+  "_model.23_one2one_cv3.1_one2one_cv3.1.2_Conv_output_0": "relative difference 4.70e-06",
+  "_model.23_one2one_cv2.2_one2one_cv2.2.2_Conv_output_0": "relative difference 5.20e-06",
+  "_model.23_one2one_cv3.2_one2one_cv3.2.2_Conv_output_0": "relative difference 9.05e-06"
+ },
+ "prediction": "12 detection(s) with onnxruntime, 12 with ncnn at score >= 0.25: 0 missing, 0 extra in ncnn"
+}

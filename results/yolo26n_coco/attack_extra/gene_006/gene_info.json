@@ -1,0 +1,52 @@
+{
+    "gene_id": 6,
+    "gene_values": [
+        0,
+        88,
+        135,
+        233
+    ],
+    "taps": [
+        "_model.8_m.0_m_m.0_cv1_conv_Conv_output_0@135",
+        "_model.10_m_m.0_attn_Add_output_0",
+        "_model.19_cv1_act_Mul_output_0"
+    ],
+    "placement": [
+        "localhost_gpu0",
+        "localhost_cpu012",
+        "localhost_cpu34",
+        "localhost_cpu6789"
+    ],
+    "attack_target_layer": {
+        "_model.8_m.0_m_m.0_cv1_conv_Conv_output_0@135": 2,
+        "_model.10_m_m.0_attn_Add_output_0": 3,
+        "_model.19_cv1_act_Mul_output_0": 4
+    },
+    "engine": "gpu_ort_cuda",
+    "side_inputs": {
+        "_model.8_m.0_m_m.0_cv1_conv_Conv_output_0@135": [
+            "_model.8_m.0_cv1_act_Mul_output_0",
+            "_model.8_m.0_cv2_act_Mul_output_0",
+            "_model.8_Split_output_0",
+            "_model.8_Split_output_1"
+        ],
+        "_model.10_m_m.0_attn_Add_output_0": [
+            "_model.10_Split_output_1",
+            "_model.10_Split_output_0",
+            "_model.6_cv2_act_Mul_output_0",
+            "_model.4_cv2_act_Mul_output_0"
+        ],
+        "_model.19_cv1_act_Mul_output_0": [
+            "_model.23_one2one_cv2.0_one2one_cv2.0.1_act_Mul_output_0",
+            "_model.23_one2one_cv3.0_one2one_cv3.0.0_one2one_cv3.0.0.1_act_Mul_output_0",
+            "_model.10_cv2_act_Mul_output_0"
+        ]
+    },
+    "side_inputs_attacked": true,
+    "clean_buffers": {
+        "_model.8_m.0_m_m.0_cv1_conv_Conv_output_0@135": [
+            "_model.6_cv2_act_Mul_output_0",
+            "_model.4_cv2_act_Mul_output_0"
+        ]
+    }
+}

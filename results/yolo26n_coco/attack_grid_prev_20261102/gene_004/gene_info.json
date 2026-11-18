@@ -1,0 +1,40 @@
+{
+    "gene_id": 4,
+    "gene_values": [
+        0,
+        25,
+        74,
+        193
+    ],
+    "taps": [
+        "_model.4_cv1_conv_Conv_output_0",
+        "_model.6_cv2_act_Mul_output_0",
+        "_model.16_m.0_m_m.0_cv1_conv_Conv_output_0"
+    ],
+    "placement": [
+        "localhost_gpu0",
+        "localhost_cpu34",
+        "localhost_cpu012",
+        "localhost_cpu6789"
+    ],
+    "attack_target_layer": {
+        "_model.4_cv1_conv_Conv_output_0": 2,
+        "_model.6_cv2_act_Mul_output_0": 3,
+        "_model.16_m.0_m_m.0_cv1_conv_Conv_output_0": 4
+    },
+    "engine": "gpu_ort_cuda",
+    "side_inputs": {
+        "_model.6_cv2_act_Mul_output_0": [
+            "_model.4_cv2_act_Mul_output_0"
+        ],
+        "_model.16_m.0_m_m.0_cv1_conv_Conv_output_0": [
+            "_model.16_m.0_cv1_act_Mul_output_0",
+            "_model.16_m.0_cv2_act_Mul_output_0",
+            "_model.16_Split_output_0",
+            "_model.16_Split_output_1",
+            "_model.13_cv2_act_Mul_output_0",
+            "_model.10_cv2_act_Mul_output_0"
+        ]
+    },
+    "side_inputs_attacked": true
+}

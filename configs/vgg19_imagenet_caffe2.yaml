@@ -1,0 +1,33 @@
+model: ../models/vgg19-caffe2-9.onnx
+
+preprocess:
+  channel_order: BGR
+  pixel_scale: 1.0
+  mean: [104.0, 117.0, 123.0]
+  std: [1.0, 1.0, 1.0]
+  resize_short: null
+
+platform:
+  gpu_slot: 5
+  resources: [localhost_gpu0, localhost_cpu012, localhost_cpu34, localhost_cpu6789]
+
+autodice:
+  bench_image: ../data/imagenet/bench.JPEG
+  labels: ../data/imagenet/synset_words.txt
+
+attack:
+  csv: ../data/imagenet/test.csv
+  dataset_dir: ../data/imagenet/val/
+  max_images: 48000
+  batch: 48
+  configs:
+    - {attack: mfgsm, eps_mode: fixed, eps_rel: [0.01, 0.05, 0.1, 0.25, 0.5, 0.8]}
+    - {attack: mgna, gamma: [0.1 ,0.5, 1.0], sigma_rel: [0.01, 0.05, 1.0, 1.5]}
+    - {attack: mjsma, theta: [0.001, 0.01, 0.05, 0.08, 0.1]}
+report:
+  stealth_band: 8
+  success_asr: 50
+  threshold:
+    mode: calibrated
+    window: 200
+    false_alarm: 0.01

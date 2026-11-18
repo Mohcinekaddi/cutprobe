@@ -1,0 +1,33 @@
+{
+ "source": "search_results.json, Pareto solution 12",
+ "best_genes": [
+  [
+   0,
+   24,
+   117,
+   214
+  ]
+ ],
+ "best_cuts": [
+  [
+   0,
+   24,
+   117,
+   214
+  ]
+ ],
+ "best_placements": [
+  [
+   "localhost_gpu0",
+   "localhost_cpu34",
+   "localhost_cpu012",
+   "localhost_cpu6789"
+  ]
+ ],
+ "best_objectives": [
+  [
+   40.71992833292614,
+   251.8398
+  ]
+ ]
+}

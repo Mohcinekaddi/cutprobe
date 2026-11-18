@@ -1,0 +1,101 @@
+StAIn GPU campaign
+============================================================
+model: models/yolo26n.onnx (detection)
+GPU: NVIDIA RTX 6000 Ada Generation (cuda:0), strict=False, tf32=False
+test images: 4800 (4800 usable), history: 200, batch 32
+decoding: 0 JPEG on GPU, 5064 on CPU (8 threads), 0 PNG, 0 cv2 fallback, 0 unreadable
+cut tensors: ['_model.3_act_Mul_output_0', '_model.4_cv1_conv_Conv_output_0', '_model.4_cv1_act_Mul_output_0', '_model.5_conv_Conv_output_0@135', '_model.6_cv2_act_Mul_output_0', '_model.8_Split_output_1@88', '_model.8_m.0_cv1_conv_Conv_output_0@85', '_model.8_m.0_cv2_act_Sigmoid_output_0', '_model.8_m.0_cv1_act_Mul_output_0@88', '_model.8_m.0_m_m.0_cv1_conv_Conv_output_0@95', '_model.8_m.0_m_m.0_cv1_conv_Conv_output_0@135', '_model.8_m.0_m_m.0_cv1_conv_Conv_output_0', '_model.8_m.0_m_m.0_cv2_act_Sigmoid_output_0', '_model.8_m.0_m_m.1_cv1_conv_Conv_output_0', '_model.9_cv2_act_Sigmoid_output_0@124', '_model.9_cv2_act_Mul_output_0', '_model.10_m_m.0_attn_Reshape_output_0', '_model.10_m_m.0_attn_Reshape_1_output_0', '_model.10_m_m.0_attn_Add_output_0', '_model.16_m.0_m_m.0_cv1_conv_Conv_output_0', '_model.16_m.0_m_m.0_cv1_act_Mul_output_0', '_model.16_m.0_m_m.0_cv2_act_Sigmoid_output_0', '_model.16_m.0_m_m.0_Add_output_0', '_model.16_m.0_cv3_conv_Conv_output_0', '_model.16_m.0_cv3_act_Sigmoid_output_0', '_model.16_cv2_act_Mul_output_0', '_model.23_one2one_cv2.0_one2one_cv2.0.1_act_Sigmoid_output_0', '_model.19_cv1_act_Mul_output_0']
+side branches: {'_model.6_cv2_act_Mul_output_0': ['_model.4_cv2_act_Mul_output_0'], '_model.8_m.0_cv1_conv_Conv_output_0@85': ['_model.8_Split_output_1'], '_model.8_m.0_cv2_act_Sigmoid_output_0': ['_model.8_m.0_cv1_conv_Conv_output_0', '_model.8_m.0_cv1_act_Sigmoid_output_0', '_model.8_m.0_cv2_conv_Conv_output_0', '_model.8_Split_output_0', '_model.8_Split_output_1', '_model.6_cv2_act_Mul_output_0', '_model.4_cv2_act_Mul_output_0'], '_model.8_m.0_cv1_act_Mul_output_0@88': ['_model.8_m.0_cv2_conv_Conv_output_0', '_model.8_m.0_cv2_act_Sigmoid_output_0'], '_model.8_m.0_m_m.0_cv1_conv_Conv_output_0@95': ['_model.8_m.0_cv1_act_Mul_output_0'], '_model.8_m.0_m_m.0_cv1_conv_Conv_output_0@135': ['_model.8_m.0_cv1_act_Mul_output_0', '_model.8_m.0_cv2_act_Mul_output_0', '_model.8_Split_output_0', '_model.8_Split_output_1'], '_model.8_m.0_m_m.0_cv1_conv_Conv_output_0': ['_model.8_m.0_cv1_act_Mul_output_0', '_model.8_m.0_cv2_act_Mul_output_0', '_model.8_Split_output_0', '_model.8_Split_output_1', '_model.6_cv2_act_Mul_output_0', '_model.4_cv2_act_Mul_output_0'], '_model.8_m.0_m_m.0_cv2_act_Sigmoid_output_0': ['_model.8_m.0_m_m.0_cv2_conv_Conv_output_0', '_model.8_m.0_cv1_act_Mul_output_0', '_model.8_m.0_cv2_act_Mul_output_0', '_model.8_Split_output_0', '_model.8_Split_output_1', '_model.6_cv2_act_Mul_output_0', '_model.4_cv2_act_Mul_output_0'], '_model.8_m.0_m_m.1_cv1_conv_Conv_output_0': ['_model.8_m.0_m_m.0_Add_output_0', '_model.8_m.0_cv2_act_Mul_output_0', '_model.8_Split_output_0', '_model.8_Split_output_1', '_model.6_cv2_act_Mul_output_0', '_model.4_cv2_act_Mul_output_0'], '_model.9_cv2_act_Sigmoid_output_0@124': ['_model.9_cv2_conv_Conv_output_0', '_model.8_cv2_act_Mul_output_0'], '_model.9_cv2_act_Mul_output_0': ['_model.8_cv2_act_Mul_output_0', '_model.6_cv2_act_Mul_output_0', '_model.4_cv2_act_Mul_output_0'], '_model.10_m_m.0_attn_Reshape_output_0': ['_model.10_Split_output_1', '_model.10_Split_output_0', '_model.6_cv2_act_Mul_output_0', '_model.4_cv2_act_Mul_output_0'], '_model.10_m_m.0_attn_Reshape_1_output_0': ['_model.10_m_m.0_attn_pe_conv_Conv_output_0', '_model.10_Split_output_1', '_model.10_Split_output_0', '_model.6_cv2_act_Mul_output_0', '_model.4_cv2_act_Mul_output_0'], '_model.10_m_m.0_attn_Add_output_0': ['_model.10_Split_output_1', '_model.10_Split_output_0', '_model.6_cv2_act_Mul_output_0', '_model.4_cv2_act_Mul_output_0'], '_model.16_m.0_m_m.0_cv1_conv_Conv_output_0': ['_model.16_m.0_cv1_act_Mul_output_0', '_model.16_m.0_cv2_act_Mul_output_0', '_model.16_Split_output_0', '_model.16_Split_output_1', '_model.13_cv2_act_Mul_output_0', '_model.10_cv2_act_Mul_output_0'], '_model.16_m.0_m_m.0_cv1_act_Mul_output_0': ['_model.16_m.0_cv1_act_Mul_output_0', '_model.16_m.0_cv2_act_Mul_output_0', '_model.16_Split_output_0', '_model.16_Split_output_1', '_model.13_cv2_act_Mul_output_0', '_model.10_cv2_act_Mul_output_0'], '_model.16_m.0_m_m.0_cv2_act_Sigmoid_output_0': ['_model.16_m.0_m_m.0_cv2_conv_Conv_output_0', '_model.16_m.0_cv1_act_Mul_output_0', '_model.16_m.0_cv2_act_Mul_output_0', '_model.16_Split_output_0', '_model.16_Split_output_1', '_model.13_cv2_act_Mul_output_0', '_model.10_cv2_act_Mul_output_0'], '_model.16_m.0_m_m.0_Add_output_0': ['_model.16_m.0_cv2_act_Mul_output_0', '_model.16_Split_output_0', '_model.16_Split_output_1', '_model.13_cv2_act_Mul_output_0', '_model.10_cv2_act_Mul_output_0'], '_model.16_m.0_cv3_conv_Conv_output_0': ['_model.16_Split_output_0', '_model.16_Split_output_1', '_model.13_cv2_act_Mul_output_0', '_model.10_cv2_act_Mul_output_0'], '_model.16_m.0_cv3_act_Sigmoid_output_0': ['_model.16_m.0_cv3_conv_Conv_output_0', '_model.16_Split_output_0', '_model.16_Split_output_1', '_model.13_cv2_act_Mul_output_0', '_model.10_cv2_act_Mul_output_0'], '_model.16_cv2_act_Mul_output_0': ['_model.13_cv2_act_Mul_output_0', '_model.10_cv2_act_Mul_output_0'], '_model.23_one2one_cv2.0_one2one_cv2.0.1_act_Sigmoid_output_0': ['_model.23_one2one_cv3.0_one2one_cv3.0.0_one2one_cv3.0.0.1_conv_Conv_output_0', '_model.19_cv1_conv_Conv_output_0', '_model.23_one2one_cv2.0_one2one_cv2.0.1_conv_Conv_output_0', '_model.10_cv2_act_Mul_output_0'], '_model.19_cv1_act_Mul_output_0': ['_model.23_one2one_cv2.0_one2one_cv2.0.1_act_Mul_output_0', '_model.23_one2one_cv3.0_one2one_cv3.0.0_one2one_cv3.0.0.1_act_Mul_output_0', '_model.10_cv2_act_Mul_output_0']} (attacked)
+preprocess: {'channel_order': 'RGB', 'pixel_scale': 0.00392156862745098, 'mean': [0.0, 0.0, 0.0], 'std': [1.0, 1.0, 1.0], 'resize_short': None, 'letterbox': True, 'pad_value': 114, 'input_hw': None}
+configurations: mfgsm_eps_0p5 (mFGSM eps=0.5) | mgna_g0p5_s0p08 (mGNA g=0.5 sigma=0.08) | mgna_g0p5_s1p2 (mGNA g=0.5 sigma=1.2)
+detection head: yolov8, 80 classes; score >= 0.25 and IoU >= 0.5 for the paired object metrics
+ground truth: COCO instances_val2017.json, 34905 objects
+full model mAP@[.5:.95] 40.38 %, mAP@.5 55.95 %
+time 1092.9 s: load 63.8, full 12.2, clean suffixes 208.9, attacks 807.1
+torch peak memory 18.72 GiB, 2 out-of-memory split(s)
+figures: 168 per cut/config, 14 per gene
+
+_model.3_act_Mul_output_0 | mFGSM eps=0.5: ASR 45.02 %, mAP@.5 55.95 -> 31.76, vanished 53.21 %, ghost 14.04 %, amp_rel 0.4986
+_model.3_act_Mul_output_0 | mGNA g=0.5 sigma=0.08: ASR 1.25 %, mAP@.5 55.95 -> 55.92, vanished 2.69 %, ghost 2.58 %, amp_rel 0.0566
+_model.3_act_Mul_output_0 | mGNA g=0.5 sigma=1.2: ASR 82.55 %, mAP@.5 55.95 -> 8.17, vanished 85.83 %, ghost 12.53 %, amp_rel 0.8485
+_model.4_cv1_conv_Conv_output_0 | mFGSM eps=0.5: ASR 56.47 %, mAP@.5 55.95 -> 24.19, vanished 63.52 %, ghost 20.04 %, amp_rel 0.4978
+_model.4_cv1_conv_Conv_output_0 | mGNA g=0.5 sigma=0.08: ASR 1.42 %, mAP@.5 55.95 -> 55.88, vanished 2.89 %, ghost 2.93 %, amp_rel 0.0566
+_model.4_cv1_conv_Conv_output_0 | mGNA g=0.5 sigma=1.2: ASR 81.74 %, mAP@.5 55.95 -> 8.84, vanished 85.17 %, ghost 10.97 %, amp_rel 0.8485
+_model.4_cv1_act_Mul_output_0 | mFGSM eps=0.5: ASR 44.29 %, mAP@.5 55.95 -> 33.23, vanished 52.65 %, ghost 17.34 %, amp_rel 0.4977
+_model.4_cv1_act_Mul_output_0 | mGNA g=0.5 sigma=0.08: ASR 1.14 %, mAP@.5 55.95 -> 55.93, vanished 2.42 %, ghost 2.45 %, amp_rel 0.0566
+_model.4_cv1_act_Mul_output_0 | mGNA g=0.5 sigma=1.2: ASR 59.77 %, mAP@.5 55.95 -> 21.27, vanished 66.14 %, ghost 15.42 %, amp_rel 0.8485
+_model.5_conv_Conv_output_0@135 | mFGSM eps=0.5: ASR 64.34 %, mAP@.5 55.95 -> 17.49, vanished 70.00 %, ghost 12.16 %, amp_rel 0.4890
+_model.5_conv_Conv_output_0@135 | mGNA g=0.5 sigma=0.08: ASR 1.30 %, mAP@.5 55.95 -> 55.93, vanished 2.76 %, ghost 2.85 %, amp_rel 0.0566
+_model.5_conv_Conv_output_0@135 | mGNA g=0.5 sigma=1.2: ASR 82.53 %, mAP@.5 55.95 -> 11.53, vanished 85.93 %, ghost 9.93 %, amp_rel 0.8485
+_model.6_cv2_act_Mul_output_0 | mFGSM eps=0.5: ASR 19.82 %, mAP@.5 55.95 -> 48.56, vanished 28.56 %, ghost 9.14 %, amp_rel 0.5000, side_amp_rel 0.4980
+_model.6_cv2_act_Mul_output_0 | mGNA g=0.5 sigma=0.08: ASR 0.81 %, mAP@.5 55.95 -> 55.93, vanished 1.64 %, ghost 1.69 %, amp_rel 0.0566, side_amp_rel 0.0566
+_model.6_cv2_act_Mul_output_0 | mGNA g=0.5 sigma=1.2: ASR 13.88 %, mAP@.5 55.95 -> 52.10, vanished 21.28 %, ghost 9.70 %, amp_rel 0.8485, side_amp_rel 0.8485
+_model.8_Split_output_1@88 | mFGSM eps=0.5: ASR 6.14 %, mAP@.5 55.95 -> 54.49, vanished 10.66 %, ghost 7.14 %, amp_rel 0.5000
+_model.8_Split_output_1@88 | mGNA g=0.5 sigma=0.08: ASR 0.29 %, mAP@.5 55.95 -> 55.94, vanished 0.68 %, ghost 0.66 %, amp_rel 0.0566
+_model.8_Split_output_1@88 | mGNA g=0.5 sigma=1.2: ASR 4.50 %, mAP@.5 55.95 -> 55.07, vanished 8.57 %, ghost 7.46 %, amp_rel 0.8485
+_model.8_m.0_cv1_conv_Conv_output_0@85 | mFGSM eps=0.5: ASR 2.20 %, mAP@.5 55.95 -> 55.52, vanished 4.47 %, ghost 4.43 %, amp_rel 0.5000, side_amp_rel 0.5000
+_model.8_m.0_cv1_conv_Conv_output_0@85 | mGNA g=0.5 sigma=0.08: ASR 0.13 %, mAP@.5 55.95 -> 55.96, vanished 0.42 %, ghost 0.47 %, amp_rel 0.0566, side_amp_rel 0.0566
+_model.8_m.0_cv1_conv_Conv_output_0@85 | mGNA g=0.5 sigma=1.2: ASR 2.63 %, mAP@.5 55.95 -> 55.62, vanished 5.40 %, ghost 4.84 %, amp_rel 0.8486, side_amp_rel 0.8485
+_model.8_m.0_cv2_act_Sigmoid_output_0 | mFGSM eps=0.5: ASR 25.00 %, mAP@.5 55.95 -> 46.27, vanished 34.16 %, ghost 8.28 %, amp_rel 0.5000, side_amp_rel 0.4836
+_model.8_m.0_cv2_act_Sigmoid_output_0 | mGNA g=0.5 sigma=0.08: ASR 0.82 %, mAP@.5 55.95 -> 55.96, vanished 1.78 %, ghost 1.80 %, amp_rel 0.0566, side_amp_rel 0.0548
+_model.8_m.0_cv2_act_Sigmoid_output_0 | mGNA g=0.5 sigma=1.2: ASR 18.96 %, mAP@.5 55.95 -> 49.01, vanished 27.15 %, ghost 12.13 %, amp_rel 0.8486, side_amp_rel 0.8219
+_model.8_m.0_cv1_act_Mul_output_0@88 | mFGSM eps=0.5: ASR 6.83 %, mAP@.5 55.95 -> 54.36, vanished 11.83 %, ghost 7.15 %, amp_rel 0.5000, side_amp_rel 0.4699
+_model.8_m.0_cv1_act_Mul_output_0@88 | mGNA g=0.5 sigma=0.08: ASR 0.29 %, mAP@.5 55.95 -> 55.93, vanished 0.71 %, ghost 0.66 %, amp_rel 0.0566, side_amp_rel 0.0532
+_model.8_m.0_cv1_act_Mul_output_0@88 | mGNA g=0.5 sigma=1.2: ASR 3.97 %, mAP@.5 55.95 -> 55.32, vanished 8.02 %, ghost 7.08 %, amp_rel 0.8486, side_amp_rel 0.7975
+_model.8_m.0_m_m.0_cv1_conv_Conv_output_0@95 | mFGSM eps=0.5: ASR 6.43 %, mAP@.5 55.95 -> 54.59, vanished 11.51 %, ghost 7.16 %, amp_rel 0.5000, side_amp_rel 0.5000
+_model.8_m.0_m_m.0_cv1_conv_Conv_output_0@95 | mGNA g=0.5 sigma=0.08: ASR 0.30 %, mAP@.5 55.95 -> 55.92, vanished 0.76 %, ghost 0.75 %, amp_rel 0.0566, side_amp_rel 0.0566
+_model.8_m.0_m_m.0_cv1_conv_Conv_output_0@95 | mGNA g=0.5 sigma=1.2: ASR 5.57 %, mAP@.5 55.95 -> 54.91, vanished 10.14 %, ghost 8.12 %, amp_rel 0.8486, side_amp_rel 0.8485
+_model.8_m.0_m_m.0_cv1_conv_Conv_output_0@135 | mFGSM eps=0.5: ASR 12.49 %, mAP@.5 55.95 -> 51.01, vanished 19.43 %, ghost 11.66 %, amp_rel 0.5000, side_amp_rel 0.4955
+_model.8_m.0_m_m.0_cv1_conv_Conv_output_0@135 | mGNA g=0.5 sigma=0.08: ASR 0.69 %, mAP@.5 55.95 -> 55.92, vanished 1.50 %, ghost 1.40 %, amp_rel 0.0566, side_amp_rel 0.0561
+_model.8_m.0_m_m.0_cv1_conv_Conv_output_0@135 | mGNA g=0.5 sigma=1.2: ASR 13.84 %, mAP@.5 55.95 -> 50.96, vanished 21.24 %, ghost 11.65 %, amp_rel 0.8486, side_amp_rel 0.8408
+_model.8_m.0_m_m.0_cv1_conv_Conv_output_0 | mFGSM eps=0.5: ASR 20.92 %, mAP@.5 55.95 -> 48.51, vanished 29.95 %, ghost 8.10 %, amp_rel 0.5000, side_amp_rel 0.4887
+_model.8_m.0_m_m.0_cv1_conv_Conv_output_0 | mGNA g=0.5 sigma=0.08: ASR 0.81 %, mAP@.5 55.95 -> 55.89, vanished 1.82 %, ghost 1.94 %, amp_rel 0.0566, side_amp_rel 0.0554
+_model.8_m.0_m_m.0_cv1_conv_Conv_output_0 | mGNA g=0.5 sigma=1.2: ASR 18.12 %, mAP@.5 55.95 -> 49.42, vanished 26.17 %, ghost 11.34 %, amp_rel 0.8486, side_amp_rel 0.8310
+_model.8_m.0_m_m.0_cv2_act_Sigmoid_output_0 | mFGSM eps=0.5: ASR 21.35 %, mAP@.5 55.95 -> 48.31, vanished 30.49 %, ghost 8.26 %, amp_rel 0.5000, side_amp_rel 0.4907
+_model.8_m.0_m_m.0_cv2_act_Sigmoid_output_0 | mGNA g=0.5 sigma=0.08: ASR 0.78 %, mAP@.5 55.95 -> 55.93, vanished 1.70 %, ghost 1.63 %, amp_rel 0.0566, side_amp_rel 0.0556
+_model.8_m.0_m_m.0_cv2_act_Sigmoid_output_0 | mGNA g=0.5 sigma=1.2: ASR 17.39 %, mAP@.5 55.95 -> 49.62, vanished 25.47 %, ghost 12.80 %, amp_rel 0.8486, side_amp_rel 0.8340
+_model.8_m.0_m_m.1_cv1_conv_Conv_output_0 | mFGSM eps=0.5: ASR 19.49 %, mAP@.5 55.95 -> 49.09, vanished 28.23 %, ghost 8.86 %, amp_rel 0.5000, side_amp_rel 0.4811
+_model.8_m.0_m_m.1_cv1_conv_Conv_output_0 | mGNA g=0.5 sigma=0.08: ASR 0.83 %, mAP@.5 55.95 -> 55.92, vanished 1.85 %, ghost 1.94 %, amp_rel 0.0566, side_amp_rel 0.0545
+_model.8_m.0_m_m.1_cv1_conv_Conv_output_0 | mGNA g=0.5 sigma=1.2: ASR 17.68 %, mAP@.5 55.95 -> 49.16, vanished 25.71 %, ghost 13.48 %, amp_rel 0.8486, side_amp_rel 0.8179
+_model.9_cv2_act_Sigmoid_output_0@124 | mFGSM eps=0.5: ASR 21.02 %, mAP@.5 55.95 -> 47.82, vanished 29.75 %, ghost 10.44 %, amp_rel 0.5000, side_amp_rel 0.4144
+_model.9_cv2_act_Sigmoid_output_0@124 | mGNA g=0.5 sigma=0.08: ASR 0.82 %, mAP@.5 55.95 -> 55.96, vanished 1.91 %, ghost 2.06 %, amp_rel 0.0566, side_amp_rel 0.0469
+_model.9_cv2_act_Sigmoid_output_0@124 | mGNA g=0.5 sigma=1.2: ASR 31.83 %, mAP@.5 55.95 -> 40.91, vanished 40.34 %, ghost 11.10 %, amp_rel 0.8485, side_amp_rel 0.7033
+_model.9_cv2_act_Mul_output_0 | mFGSM eps=0.5: ASR 28.18 %, mAP@.5 55.95 -> 47.04, vanished 37.80 %, ghost 6.85 %, amp_rel 0.5000, side_amp_rel 0.4880
+_model.9_cv2_act_Mul_output_0 | mGNA g=0.5 sigma=0.08: ASR 0.97 %, mAP@.5 55.95 -> 55.95, vanished 1.97 %, ghost 1.83 %, amp_rel 0.0566, side_amp_rel 0.0553
+_model.9_cv2_act_Mul_output_0 | mGNA g=0.5 sigma=1.2: ASR 23.50 %, mAP@.5 55.95 -> 46.41, vanished 32.34 %, ghost 11.04 %, amp_rel 0.8485, side_amp_rel 0.8300
+_model.10_m_m.0_attn_Reshape_output_0 | mFGSM eps=0.5: ASR 35.82 %, mAP@.5 55.95 -> 43.95, vanished 45.44 %, ghost 5.90 %, amp_rel 0.5000, side_amp_rel 0.4673
+_model.10_m_m.0_attn_Reshape_output_0 | mGNA g=0.5 sigma=0.08: ASR 1.16 %, mAP@.5 55.95 -> 55.93, vanished 2.57 %, ghost 2.52 %, amp_rel 0.0566, side_amp_rel 0.0530
+_model.10_m_m.0_attn_Reshape_output_0 | mGNA g=0.5 sigma=1.2: ASR 53.72 %, mAP@.5 55.95 -> 33.18, vanished 61.28 %, ghost 6.79 %, amp_rel 0.8485, side_amp_rel 0.7945
+_model.10_m_m.0_attn_Reshape_1_output_0 | mFGSM eps=0.5: ASR 28.77 %, mAP@.5 55.95 -> 46.99, vanished 38.71 %, ghost 5.45 %, amp_rel 0.5000, side_amp_rel 0.4719
+_model.10_m_m.0_attn_Reshape_1_output_0 | mGNA g=0.5 sigma=0.08: ASR 1.23 %, mAP@.5 55.95 -> 55.89, vanished 2.52 %, ghost 2.56 %, amp_rel 0.0566, side_amp_rel 0.0535
+_model.10_m_m.0_attn_Reshape_1_output_0 | mGNA g=0.5 sigma=1.2: ASR 42.63 %, mAP@.5 55.95 -> 39.55, vanished 51.83 %, ghost 6.75 %, amp_rel 0.8485, side_amp_rel 0.8020
+_model.10_m_m.0_attn_Add_output_0 | mFGSM eps=0.5: ASR 23.29 %, mAP@.5 55.95 -> 49.64, vanished 33.06 %, ghost 5.82 %, amp_rel 0.5000, side_amp_rel 0.4673
+_model.10_m_m.0_attn_Add_output_0 | mGNA g=0.5 sigma=0.08: ASR 0.97 %, mAP@.5 55.95 -> 55.92, vanished 2.21 %, ghost 2.06 %, amp_rel 0.0566, side_amp_rel 0.0530
+_model.10_m_m.0_attn_Add_output_0 | mGNA g=0.5 sigma=1.2: ASR 23.00 %, mAP@.5 55.95 -> 48.25, vanished 32.50 %, ghost 8.63 %, amp_rel 0.8485, side_amp_rel 0.7945
+_model.16_m.0_m_m.0_cv1_conv_Conv_output_0 | mFGSM eps=0.5: ASR 39.35 %, mAP@.5 55.95 -> 48.56, vanished 49.64 %, ghost 1.85 %, amp_rel 0.5000, side_amp_rel 0.4284
+_model.16_m.0_m_m.0_cv1_conv_Conv_output_0 | mGNA g=0.5 sigma=0.08: ASR 0.79 %, mAP@.5 55.95 -> 55.90, vanished 1.79 %, ghost 1.59 %, amp_rel 0.0566, side_amp_rel 0.0485
+_model.16_m.0_m_m.0_cv1_conv_Conv_output_0 | mGNA g=0.5 sigma=1.2: ASR 15.07 %, mAP@.5 55.95 -> 52.31, vanished 22.80 %, ghost 7.71 %, amp_rel 0.8485, side_amp_rel 0.7270
+_model.16_m.0_m_m.0_cv1_act_Mul_output_0 | mFGSM eps=0.5: ASR 40.49 %, mAP@.5 55.95 -> 48.42, vanished 50.61 %, ghost 1.76 %, amp_rel 0.5000, side_amp_rel 0.4284
+_model.16_m.0_m_m.0_cv1_act_Mul_output_0 | mGNA g=0.5 sigma=0.08: ASR 0.72 %, mAP@.5 55.95 -> 55.90, vanished 1.70 %, ghost 1.60 %, amp_rel 0.0566, side_amp_rel 0.0485
+_model.16_m.0_m_m.0_cv1_act_Mul_output_0 | mGNA g=0.5 sigma=1.2: ASR 13.50 %, mAP@.5 55.95 -> 52.58, vanished 20.89 %, ghost 7.94 %, amp_rel 0.8485, side_amp_rel 0.7270
+_model.16_m.0_m_m.0_cv2_act_Sigmoid_output_0 | mFGSM eps=0.5: ASR 40.07 %, mAP@.5 55.95 -> 48.51, vanished 50.17 %, ghost 1.83 %, amp_rel 0.5000, side_amp_rel 0.4352
+_model.16_m.0_m_m.0_cv2_act_Sigmoid_output_0 | mGNA g=0.5 sigma=0.08: ASR 0.76 %, mAP@.5 55.95 -> 55.90, vanished 1.80 %, ghost 1.78 %, amp_rel 0.0566, side_amp_rel 0.0492
+_model.16_m.0_m_m.0_cv2_act_Sigmoid_output_0 | mGNA g=0.5 sigma=1.2: ASR 14.39 %, mAP@.5 55.95 -> 52.80, vanished 21.82 %, ghost 7.72 %, amp_rel 0.8485, side_amp_rel 0.7386
+_model.16_m.0_m_m.0_Add_output_0 | mFGSM eps=0.5: ASR 39.28 %, mAP@.5 55.95 -> 48.75, vanished 49.53 %, ghost 1.81 %, amp_rel 0.5000, side_amp_rel 0.4318
+_model.16_m.0_m_m.0_Add_output_0 | mGNA g=0.5 sigma=0.08: ASR 0.69 %, mAP@.5 55.95 -> 55.99, vanished 1.60 %, ghost 1.65 %, amp_rel 0.0566, side_amp_rel 0.0489
+_model.16_m.0_m_m.0_Add_output_0 | mGNA g=0.5 sigma=1.2: ASR 13.35 %, mAP@.5 55.95 -> 52.86, vanished 20.73 %, ghost 7.62 %, amp_rel 0.8485, side_amp_rel 0.7329
+_model.16_m.0_cv3_conv_Conv_output_0 | mFGSM eps=0.5: ASR 42.92 %, mAP@.5 55.95 -> 47.59, vanished 52.83 %, ghost 1.85 %, amp_rel 0.5000, side_amp_rel 0.4121
+_model.16_m.0_cv3_conv_Conv_output_0 | mGNA g=0.5 sigma=0.08: ASR 0.82 %, mAP@.5 55.95 -> 55.93, vanished 1.76 %, ghost 1.64 %, amp_rel 0.0566, side_amp_rel 0.0466
+_model.16_m.0_cv3_conv_Conv_output_0 | mGNA g=0.5 sigma=1.2: ASR 15.79 %, mAP@.5 55.95 -> 52.02, vanished 24.03 %, ghost 6.89 %, amp_rel 0.8486, side_amp_rel 0.6994
+_model.16_m.0_cv3_act_Sigmoid_output_0 | mFGSM eps=0.5: ASR 45.03 %, mAP@.5 55.95 -> 46.93, vanished 54.74 %, ghost 1.73 %, amp_rel 0.5000, side_amp_rel 0.4677
+_model.16_m.0_cv3_act_Sigmoid_output_0 | mGNA g=0.5 sigma=0.08: ASR 0.73 %, mAP@.5 55.95 -> 55.95, vanished 1.66 %, ghost 1.89 %, amp_rel 0.0566, side_amp_rel 0.0529
+_model.16_m.0_cv3_act_Sigmoid_output_0 | mGNA g=0.5 sigma=1.2: ASR 17.66 %, mAP@.5 55.95 -> 51.34, vanished 25.75 %, ghost 7.35 %, amp_rel 0.8486, side_amp_rel 0.7937
+_model.16_cv2_act_Mul_output_0 | mFGSM eps=0.5: ASR 54.04 %, mAP@.5 55.95 -> 39.74, vanished 62.54 %, ghost 1.41 %, amp_rel 0.5000, side_amp_rel 0.4943
+_model.16_cv2_act_Mul_output_0 | mGNA g=0.5 sigma=0.08: ASR 1.00 %, mAP@.5 55.95 -> 55.87, vanished 2.07 %, ghost 1.95 %, amp_rel 0.0566, side_amp_rel 0.0559
+_model.16_cv2_act_Mul_output_0 | mGNA g=0.5 sigma=1.2: ASR 21.20 %, mAP@.5 55.95 -> 49.12, vanished 29.56 %, ghost 6.62 %, amp_rel 0.8485, side_amp_rel 0.8388
+_model.23_one2one_cv2.0_one2one_cv2.0.1_act_Sigmoid_output_0 | mFGSM eps=0.5: ASR 43.36 %, mAP@.5 55.95 -> 43.66, vanished 53.32 %, ghost 1.89 %, amp_rel 0.5000, side_amp_rel 0.4964
+_model.23_one2one_cv2.0_one2one_cv2.0.1_act_Sigmoid_output_0 | mGNA g=0.5 sigma=0.08: ASR 1.25 %, mAP@.5 55.95 -> 55.89, vanished 2.37 %, ghost 2.00 %, amp_rel 0.0566, side_amp_rel 0.0562
+_model.23_one2one_cv2.0_one2one_cv2.0.1_act_Sigmoid_output_0 | mGNA g=0.5 sigma=1.2: ASR 24.25 %, mAP@.5 55.95 -> 44.12, vanished 33.11 %, ghost 17.33 %, amp_rel 0.8485, side_amp_rel 0.8424
+_model.19_cv1_act_Mul_output_0 | mFGSM eps=0.5: ASR 40.41 %, mAP@.5 55.95 -> 45.14, vanished 50.58 %, ghost 1.71 %, amp_rel 0.5000, side_amp_rel 0.4849
+_model.19_cv1_act_Mul_output_0 | mGNA g=0.5 sigma=0.08: ASR 1.05 %, mAP@.5 55.95 -> 55.90, vanished 1.92 %, ghost 1.84 %, amp_rel 0.0566, side_amp_rel 0.0549
+_model.19_cv1_act_Mul_output_0 | mGNA g=0.5 sigma=1.2: ASR 18.92 %, mAP@.5 55.95 -> 46.49, vanished 26.56 %, ghost 15.00 %, amp_rel 0.8485, side_amp_rel 0.8229

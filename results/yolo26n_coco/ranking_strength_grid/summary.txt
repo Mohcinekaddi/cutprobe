@@ -1,0 +1,91 @@
+Robustness ranking of the Pareto-optimal partitionings - yolo26n_coco
+clean mAP@.5 55.95 %; 14 partitionings, 29 distinct cuts (device semantics)
+budget: 19 configuration(s): mFGSM ε 0.01, mFGSM ε 0.05, mFGSM ε 0.1, mFGSM ε 0.25, mFGSM ε 0.5, mFGSM ε 0.75, mFGSM ε 1, mFGSM ε 1.5, mGNA σ 0.01 γ 0.5, mGNA σ 0.05 γ 0.5, mGNA σ 0.1 γ 0.5, mGNA σ 1 γ 0.5, mGNA σ 1.2 γ 0.5, mGNA σ 2.5 γ 0.5, mJSMA θ 0.001, mJSMA θ 0.01, mJSMA θ 0.05, mJSMA θ 0.08, mJSMA θ 0.1
+Mean, Worst: accuracy under attack in % of the clean accuracy, averaged over the devices / on the weakest device; A_s = most damaging configuration of the budget at the cut of D_s (null attack included). Ranked by Mean.
+stealthy: only the (cut, configuration) pairs whose shift Δ stays within ±10 % of the clean std (mean and std of the feature map)
+† fastest, ‡ lightest partitioning
+
+== whole budget, any
+rank    π        T       M   Mean  Worst  weakest cut (configuration)
+   1   14     26.4   245.2   28.7    0.1  _model.8_m.0_cv1_conv_Conv_output_0@dev0 (mFGSM ε 1.5)
+   2  10‡     25.0   245.1   28.7    0.1  _model.8_m.0_cv1_conv_Conv_output_0@dev0 (mFGSM ε 1.5)
+   3    5     27.9   245.6   24.2    0.1  _model.8_m.0_cv1_act_Mul_output_0@dev0 (mFGSM ε 1.5)
+   4    3     27.3   245.8   22.6    0.2  _model.8_m.0_m_m.0_cv1_conv_Conv_output_0@dev0 (mFGSM ε 1.5)
+   5    2     27.5   246.1   21.9    0.3  _model.8_Split_output_0@dev0 (mFGSM ε 1.5)
+   6    6     43.3   276.0    3.0    0.2  _model.8_m.0_m_m.0_cv1_conv_Conv_output_0@dev0 (mFGSM ε 1.5)
+   7   8†     44.4   276.2    1.5    0.2  _model.8_m.0_m_m.0_cv1_conv_Conv_output_0@dev0 (mFGSM ε 1.5)
+   8   11     30.5   246.7    0.8    0.0  _model.9_cv2_act_Sigmoid_output_0@dev0 (mFGSM ε 1.5)
+   9    9     40.4   261.5    0.8    0.0  _model.5_conv_Conv_output_0@dev0 (mFGSM ε 1.5)
+   9   13     40.6   261.3    0.8    0.0  _model.5_conv_Conv_output_0@dev0 (mFGSM ε 1.5)
+  11    4     34.1   252.1    0.5    0.0  _model.4_cv1_conv_Conv_output_0 (mFGSM ε 1)
+  12    7     37.4   252.5    0.1    0.0  _model.4_cv1_act_Mul_output_0 (mFGSM ε 1.5)
+  13    1     39.5   252.4    0.1    0.0  _model.4_cv1_conv_Conv_output_0 (mFGSM ε 1)
+  13   12     37.4   251.9    0.1    0.0  _model.3_act_Mul_output_0 (mJSMA θ 0.1)
+
+== whole budget, stealthy (Δ ≤ 10 %)
+rank    π        T       M   Mean  Worst  weakest cut (configuration)
+   1    2     27.5   246.1   70.5   63.7  _model.8_Split_output_0@dev0 (mFGSM ε 0.75)
+   2    5     27.9   245.6   69.0   56.5  _model.8_m.0_cv1_act_Mul_output_0@dev0 (mFGSM ε 0.75)
+   3  10‡     25.0   245.1   66.8   43.4  _model.8_m.0_cv1_conv_Conv_output_0@dev0 (mFGSM ε 0.75)
+   4   14     26.4   245.2   66.0   43.4  _model.8_m.0_cv1_conv_Conv_output_0@dev0 (mFGSM ε 0.75)
+   5    6     43.3   276.0   45.0   19.0  _model.8_m.0_m_m.0_cv1_conv_Conv_output_0@dev0 (mFGSM ε 1)
+   6    3     27.3   245.8   43.7   19.0  _model.8_m.0_m_m.0_cv1_conv_Conv_output_0@dev0 (mFGSM ε 1)
+   7    9     40.4   261.5   32.7    0.1  _model.5_conv_Conv_output_0@dev0 (mFGSM ε 0.75)
+   7   13     40.6   261.3   32.7    0.1  _model.5_conv_Conv_output_0@dev0 (mFGSM ε 0.75)
+   9   12     37.4   251.9   32.2    3.4  _model.3_act_Mul_output_0 (mFGSM ε 0.75)
+  10    1     39.5   252.4   31.3    0.7  _model.4_cv1_conv_Conv_output_0 (mFGSM ε 0.75)
+  11   11     30.5   246.7   29.8    4.7  _model.9_cv2_act_Sigmoid_output_0@dev0 (mFGSM ε 1)
+  12    4     34.1   252.1   28.7    0.7  _model.4_cv1_conv_Conv_output_0 (mFGSM ε 0.75)
+  13    7     37.4   252.5   26.3    3.9  _model.4_cv1_act_Mul_output_0 (mFGSM ε 0.75)
+  14   8†     44.4   276.2   24.6   16.9  _model.23_one2one_cv2.0_one2one_cv2.0.1_act_Sigmoid_output_0 (mFGSM ε 1)
+
+== per attack: most robust partitioning π* (rank 1), ranges over the front, partitionings that lose more than half of their accuracy on their weakest device
+budget                   visibility                   π*   Mean  Worst    Mean range  Worst range Worst<50%
+mFGSM                    any                          14   31.7    0.1    0.1- 31.7   0.0-  0.3    14/14
+mFGSM                    stealthy (Δ ≤ 10 %)           2   70.5   63.7   24.6- 70.5   0.1- 63.7    12/14
+mGNA                     any                           2   61.5   34.7   15.9- 61.5   0.1- 34.7    14/14
+mGNA                     stealthy (Δ ≤ 10 %)        2,14   99.9   99.9   99.8- 99.9  99.8- 99.9     0/14
+mJSMA                    any                           3   37.6    2.4    0.1- 37.6   0.0- 14.4    14/14
+mJSMA                    stealthy (Δ ≤ 10 %)           1   93.1   92.5   66.2- 93.1  11.7- 92.5     1/14
+
+== per strength: most robust partitioning π* (rank 1), ranges over the front, partitionings that lose more than half of their accuracy on their weakest device
+budget                   visibility                   π*   Mean  Worst    Mean range  Worst range Worst<50%
+mFGSM ε 0.01             any                           5  100.0  100.0  100.0-100.0  99.9-100.0     0/14
+mFGSM ε 0.01             stealthy (Δ ≤ 10 %)           5  100.0  100.0  100.0-100.0  99.9-100.0     0/14
+mFGSM ε 0.05             any                           2   99.8   99.7   99.6- 99.8  99.3- 99.7     0/14
+mFGSM ε 0.05             stealthy (Δ ≤ 10 %)           2   99.8   99.7   99.6- 99.8  99.3- 99.7     0/14
+mFGSM ε 0.1              any                           3   99.5   99.1   98.7- 99.5  97.8- 99.2     0/14
+mFGSM ε 0.1              stealthy (Δ ≤ 10 %)           3   99.5   99.1   98.7- 99.5  97.8- 99.2     0/14
+mFGSM ε 0.25             any                           3   97.8   96.4   93.1- 97.8  90.4- 96.6     0/14
+mFGSM ε 0.25             stealthy (Δ ≤ 10 %)           3   97.8   96.4   93.1- 97.8  90.4- 96.6     0/14
+mFGSM ε 0.5              any                           2   90.6   87.1   66.1- 90.6  30.0- 87.1     4/14
+mFGSM ε 0.5              stealthy (Δ ≤ 10 %)           3   94.8   86.5   66.1- 94.8  30.0- 87.1     4/14
+mFGSM ε 0.75             any                           2   73.7   63.7   31.3- 73.7   0.1- 63.7     9/14
+mFGSM ε 0.75             stealthy (Δ ≤ 10 %)           2   73.7   63.7   31.3- 73.7   0.1- 63.7     9/14
+mFGSM ε 1                any                           2   45.0   23.7    8.7- 45.0   0.0- 23.7    14/14
+mFGSM ε 1                stealthy (Δ ≤ 10 %)        1,12  100.0  100.0   24.6-100.0   4.7-100.0     8/14
+mFGSM ε 1.5              any                          14   31.7    0.1    0.1- 31.7   0.0-  0.3    14/14
+mFGSM ε 1.5              stealthy (Δ ≤ 10 %)         all  100.0  100.0  100.0-100.0 100.0-100.0     0/14
+mGNA σ 0.01 γ 0.5        any                      2,9,13  100.0  100.0  100.0-100.0 100.0-100.0     0/14
+mGNA σ 0.01 γ 0.5        stealthy (Δ ≤ 10 %)      2,9,13  100.0  100.0  100.0-100.0 100.0-100.0     0/14
+mGNA σ 0.05 γ 0.5        any                        9,13  100.0  100.0   99.9-100.0  99.9-100.0     0/14
+mGNA σ 0.05 γ 0.5        stealthy (Δ ≤ 10 %)        9,13  100.0  100.0   99.9-100.0  99.9-100.0     0/14
+mGNA σ 0.1 γ 0.5         any                        2,14  100.0   99.9   99.8-100.0  99.8- 99.9     0/14
+mGNA σ 0.1 γ 0.5         stealthy (Δ ≤ 10 %)        2,14  100.0   99.9   99.8-100.0  99.8- 99.9     0/14
+mGNA σ 1 γ 0.5           any                           2   96.3   94.0   72.2- 96.3  35.6- 94.0     5/14
+mGNA σ 1 γ 0.5           stealthy (Δ ≤ 10 %)         all  100.0  100.0  100.0-100.0 100.0-100.0     0/14
+mGNA σ 1.2 γ 0.5         any                           2   94.1   90.0   61.8- 94.1  14.6- 90.0     6/14
+mGNA σ 1.2 γ 0.5         stealthy (Δ ≤ 10 %)         all  100.0  100.0  100.0-100.0 100.0-100.0     0/14
+mGNA σ 2.5 γ 0.5         any                           2   61.5   34.7   15.9- 61.5   0.1- 34.7    14/14
+mGNA σ 2.5 γ 0.5         stealthy (Δ ≤ 10 %)         all  100.0  100.0  100.0-100.0 100.0-100.0     0/14
+mJSMA θ 0.001            any                          14   97.3   94.5   91.2- 97.3  86.7- 95.9     0/14
+mJSMA θ 0.001            stealthy (Δ ≤ 10 %)          14   97.3   94.5   91.2- 97.3  86.7- 95.9     0/14
+mJSMA θ 0.01             any                           8   85.1   82.6   41.9- 85.1  11.7- 82.6     2/14
+mJSMA θ 0.01             stealthy (Δ ≤ 10 %)           1   97.5   92.5   70.6- 97.5  11.7- 92.5     1/14
+mJSMA θ 0.05             any                           3   53.3   20.6    1.4- 53.3   0.1- 42.1    14/14
+mJSMA θ 0.05             stealthy (Δ ≤ 10 %)         all  100.0  100.0  100.0-100.0 100.0-100.0     0/14
+mJSMA θ 0.08             any                           3   41.5    5.9    0.2- 41.5   0.0- 23.3    14/14
+mJSMA θ 0.08             stealthy (Δ ≤ 10 %)         all  100.0  100.0  100.0-100.0 100.0-100.0     0/14
+mJSMA θ 0.1              any                           3   37.6    2.4    0.1- 37.6   0.0- 14.4    14/14
+mJSMA θ 0.1              stealthy (Δ ≤ 10 %)         all  100.0  100.0  100.0-100.0 100.0-100.0     0/14
+
